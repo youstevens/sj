@@ -8,13 +8,16 @@ Must have yarn, node, npm latest. You can obtain these through Homebrew.
 https://brew.sh/
 
 Then please install:
+
 brew install yarn nvm node
 
 ## To Run
 For first time use, please first run the following command in the main directory:
+
 yarn
 
 Then proceed to either run:
+
 npm run start
 
 - to start the application and run on local
