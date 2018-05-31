@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700|Roboto+Condensed:400,700");
+
+@import './_variables.scss';
+@import './_normalize.scss';
+@import './_utilities.scss';
+
+body {
+	min-width: $breakpointXSmall;
+	font-family: $secondaryFontFamily;
+	background-color: #dae0e8;
+}
+
+header {
+	background-color: #3a4054;
+	height: pxToRem(68);
+	width: 100%;
+	position: relative;
+
+	.swipejobs-menu {
+		position: absolute;
+		width: pxToRem(30);
+		height: pxToRem(15);
+		top: 50%;
+		right: 3%;
+		transform: translateY(-50%);
+
+		&_icon {
+			border: solid pxToRem(3) #f0f0f1;
+			border-radius: pxToRem(2);
+			display: block;
+			margin-bottom: pxToRem(3);
+		}
+	}
+}
+
+nav {
+	background-color: #51bce9;
+	width: 100%;
+	position: relative;
+
+	.swipejobs-topnav {
+		width: 100%;
+		height: pxToRem(48);
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 pxToRem(16);
+
+		&_item {
+			list-style-type: none;
+			height: pxToRem(38);
+		}
+
+		&_item_link {
+			width: pxToRem(120);
+			background-color: #49aee4;
+			display: block;
+			text-align: center;
+			line-height: pxToRem(38);
+			color: #fff;
+			text-decoration: none;
+			font: normal pxToRem(16)/pxToRem(38) $primaryFontFamily;
+		}
+	}
+}
+
+article {
+	width: 100%;
+	position: relative;
+	padding: pxToRem(10);
+
+	.swipejobs-card {
+		background-color: #fff;
+		border-radius: pxToRem(5);
+		box-shadow: 0 pxToRem(2) pxToRem(2) pxToRem(2) rgba(202,207,213,1);
+		min-height: pxToRem(300);
+		position: relative;
+
+		li {
+			list-style-type: none;
+		}
+
+		&_job {
+			padding: pxToRem(10) pxToRem(10) pxToRem(60);
+			display: grid;
+			grid-template-areas:
+				"details location"
+				"details branch"
+				"details branch"
+				"details branch";
+		}
+
+		&_job-details {
+			grid-area: details;
+			border-right: 1px solid #bbbbbb;
+			padding-right: pxToRem(10);
+		}
+
+		&_location {
+			grid-area: location;
+			border-bottom: 1px solid #bbbbbb;
+			padding-left: pxToRem(10);
+		}
+
+		&_branch {
+			grid-area: branch;
+			padding: pxToRem(10) pxToRem(10) 0;
+		}
+
+		&_decision {
+			position: absolute;
+			bottom: 3%;
+			left: 0;
+			width: 100%;
+
+			a {
+				text-transform: uppercase;
+				color: #3ec4f7;
+
+				&.nothanks {
+					float: left;
+					margin-left: 10%;
+				}
+
+				&.takeit {
+					float: right;
+					margin-right: 10%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $breakpointSmall) {
+	article {
+		.swipejobs-card {
+			&_job {
+				grid-template-areas:
+					"details"
+					"location"
+					"branch";
+			}
+
+			&_job-details {
+				border-right: 0;
+				padding-right: 0;
+				border-bottom: 1px solid #bbbbbb;
+				padding-bottom: pxToRem(10);
+			}
+
+			&_location {
+				padding: pxToRem(10) 0;
+			}
+
+			&_branch {
+				padding-left: 0;
+			}
+		}
+	}
+}
+@import '../components/details/style.scss';
+@import '../components/location/style.scss';
+@import '../components/branch/style.scss';

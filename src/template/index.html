@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>
+		<%= JSON.stringify(htmlWebpackPlugin.options.title) %>
+	</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+
+</head>
+
+<body>
+    <header>
+        <div class="swipejobs-menu">
+            <span class="swipejobs-menu_icon"></span>
+            <span class="swipejobs-menu_icon"></span>
+            <span class="swipejobs-menu_icon"></span>
+        </div>
+    </header>
+    <nav>
+        <ul class="swipejobs-topnav">
+            <li class="swipejobs-topnav_item"><a class="swipejobs-topnav_item_link" href="/">Jobs Available</a></li>
+        </ul>
+    </nav>
+    <article>
+    	<div class="swipejobs-card">
+			<div class="swipejobs-card_job">
+				<div class="swipejobs-card_job-details"></div>
+				<div class="swipejobs-card_location"></div>
+				<div class="swipejobs-card_branch"></div>
+			</div>
+			<div class="swipejobs-card_decision">
+				<a class="nothanks" href="/">no thanks</a>
+				<a class="takeit" href="/">I'll take it</a>
+			</div>
+		</div>
+    </article>
+    <footer></footer>
+</body>
+
+</html>

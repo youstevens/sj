@@ -1,0 +1,17 @@
+.swipejobs-card {
+	&_location {
+		color: #959595;
+		font: normal pxToRem(14)/pxToRem(16) $secondaryFontFamily;
+		line-height: pxToRem(16);
+
+		h2 {
+			font: 700 pxToRem(14)/pxToRem(16) $secondaryFontFamily;
+			line-height: pxToRem(16);
+			margin-bottom: pxToRem(10);
+		}
+
+		a {
+			color: #3ec4f7;
+		}
+	}
+}
