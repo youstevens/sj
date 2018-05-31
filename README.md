@@ -1,14 +1,16 @@
+# SJ
 This application currently is only supported in Chrome, Firefox, >= Edge 15
 
-Prerequisites:
+## Prerequisites
 Must have yarn, node, npm latest. You can obtain these through Homebrew.
 
-Installation instructions for Homebrew:
+### Installation instructions for Homebrew
 https://brew.sh/
 
 Then please install:
 brew install yarn nvm node
 
+## To Run
 For first time use, please first run the following command in the main directory:
 yarn
 
