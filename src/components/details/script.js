@@ -1,5 +1,5 @@
 'use strict';
-import { DateTime } from 'luxon';
+const moment = require('moment-timezone');
 
 const $ = require('jquery');
 const mockData = require('../../data/_mockData.js');
@@ -10,7 +10,7 @@ $.fn.details = function () {
         // Helper function to format dates
         function dateFormat(dateStr, formatStr) {
             let date = dateStr.replace(/ /g, '');
-            date = DateTime.fromISO(date, { zone: 'America/Los_Angeles'}).toFormat(formatStr);
+            date = moment.tz(date, 'America/Los_Angeles').format(formatStr);
             return date;
         }
 
@@ -19,8 +19,8 @@ $.fn.details = function () {
             let start = arr[0];
             let end = arr[arr.length - 1];
 
-            start = dateFormat(start.startDate, 'EEE, MMM d');
-            end = dateFormat(end.endDate,'EEE, MMM d');
+            start = dateFormat(start.startDate, 'ddd, MMM D');
+            end = dateFormat(end.endDate,'ddd, MMM D');
 
             let markup = `${start} - ${end}`;
             return markup;
@@ -29,7 +29,7 @@ $.fn.details = function () {
         // Calculate and construct markup for the hours/days for the job
         function calchours(arr) {
             let markup = arr.map(obj => {
-                let start = dateFormat(obj.startDate, 'EEE, MMM d t ZZZZ');
+                let start = dateFormat(obj.startDate, 'ddd, MMM D h:mm:ss A zz');
                 start = start.split(' ');
                 return `<li>
                             <span class="day">${start[0]}</span>
@@ -47,7 +47,7 @@ $.fn.details = function () {
         let hourlyrate = (mockData.wagePerHourInCents && (parseInt(mockData.wagePerHourInCents) > 0)) ? parseInt(mockData.wagePerHourInCents)/100 : 0;
         // list of hours
         let hours = calchours(mockData.shifts);
-        // start and end dates 
+        // start and end dates
         let startenddate = calcStartEndDate(mockData.shifts);
 
         let markup = `

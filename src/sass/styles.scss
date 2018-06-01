@@ -4,6 +4,10 @@
 @import './_normalize.scss';
 @import './_utilities.scss';
 
+html {
+	font-size: 150%;
+}
+
 body {
 	min-width: $breakpointXSmall;
 	font-family: $secondaryFontFamily;
@@ -132,7 +136,17 @@ article {
 	}
 }
 
+@media screen and (max-width: $breakpointMedium) {
+	html {
+		font-size: 120%;
+	}
+}
+
 @media screen and (max-width: $breakpointSmall) {
+	html {
+		font-size: 100%;
+	}
+
 	article {
 		.swipejobs-card {
 			&_job {
@@ -155,6 +169,10 @@ article {
 
 			&_branch {
 				padding-left: 0;
+			}
+
+			&_branch-name {
+				margin-bottom: pxToRem(5);
 			}
 		}
 	}
